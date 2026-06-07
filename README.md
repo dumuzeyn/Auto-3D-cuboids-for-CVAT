@@ -1,6 +1,6 @@
 # Автоматическое создание 3D кубоидов для транспортных средств на дорожной сцене в CVAT
 
-**if you are an English speaker, then after the description in Russian there is a description in English.**
+**if you are an English speaker click [that](#Automatic-creation-of-3D-cuboids-for-vehicles-on-th-road-scene-in-CVAT)**
 
 Данный проект поможет автоматизировать процесс разметки машин, автобусов и грузовиков в CVAT. Проект содержит один скрипт `auto_cvat_cuboids.py`, который автоматически размечает автомобили на изображениях с помощью YOLOv8 и с не большими махинациями создает кубоиды, а далее записывает в XML-разметку в формате CVAT 1.1.
 
@@ -10,13 +10,21 @@
 
 Скрипт работает следующим образом:
 
-> 1. Берёт все изображения из папки `IMAGE_DIR`.
-> 2. Загружает модель YOLOv8.
->3. Для каждого изображения запускает детекцию объектов.
->4. Оставляет только нужные классы, в моем случае это были `Car`, `Bus`, `Truck`.
->5. Отсекает слабые детекции по порогу уверенности.
->6. Из каждого 2D bounding box (`bbox`) строится 3D-кубоид (`cuboid`).
->7. Записывает все кубоиды в XML-файл форматом CVAT 1.1.
+1. Берёт все изображения из папки `IMAGE_DIR`.
+
+2. Загружает модель YOLOv8.
+
+3. Для каждого изображения запускает детекцию объектов.
+
+4. Оставляет только нужные классы, в моем случае это были `Car`, `Bus`, `Truck`.
+
+5. Отсекает слабые детекции по порогу уверенности.
+
+6. Из каждого 2D bounding box (`bbox`) строится 3D-кубоид (`cuboid`).
+
+7. Записывает все кубоиды в XML-файл форматом CVAT 1.1.
+
+8. Импортировать аннотацию в CVAT.
 
 Идея простая: YOLO даёт обычный прямоугольник вокруг машины, а скрипт достраивает к нему вторую грань, чтобы получился псевдо-3D кубоид.
 
@@ -571,13 +579,21 @@ It can be imported into CVAT as markup in the `CVAT for images 1.1` format.
 
 The script works as follows:
 
-> 1. Takes all images from the folder `IMAGE_DIR'.
-> 2. Loads the YOLOv8 model.
-> 3. Starts object detection for each image.
->4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
->5. Cuts off weak detections based on the confidence threshold.
->6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
->7. Writes all cuboids to an XML file in CVAT 1.1 format.
+1. Takes all images from the folder `IMAGE_DIR'.
+
+2. Loads the YOLOv8 model.
+
+3. Starts object detection for each image.
+
+4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
+
+5. Cuts off weak detections based on the confidence threshold.
+
+6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
+
+7. Writes all cuboids to an XML file in CVAT 1.1 format.
+
+8. Importing annotation in CVAT.
 
 The idea is simple: YOLO gives you a regular rectangle around the car, and the script adds a second face to it to make a pseudo-3D cuboid.
 
