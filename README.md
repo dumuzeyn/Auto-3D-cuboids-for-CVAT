@@ -1,6 +1,6 @@
 # Автоматическое создание 3D кубоидов для транспортных средств на дорожной сцене в CVAT
 
-**if you are an English speaker click [that](#Automatic-creation-of-3D-cuboids-for-vehicles-on-th-road-scene-in-CVAT)**
+**if you are an English speaker click [that](#english-version)**
 
 Данный проект поможет автоматизировать процесс разметки машин, автобусов и грузовиков в CVAT. Проект содержит один скрипт `auto_cvat_cuboids.py`, который автоматически размечает автомобили на изображениях с помощью YOLOv8 и с не большими махинациями создает кубоиды, а далее записывает в XML-разметку в формате CVAT 1.1.
 
@@ -569,7 +569,9 @@ SKIP_EDGE_TRUNCATED = False
 
 ---
 
-# Automatic creation of 3D cuboids for vehicles on the road scene in CVAT
+<h1 id="english-version">
+Automatic creation of 3D cuboids for vehicles on the road scene in CVAT
+</h1>
 
 This project will help automate the process of marking cars, buses and trucks in CVAT. The project contains one script `auto_cvat_cuboids.py `, which automatically marks cars in images using YOLOv8 and creates cuboids with little manipulation, and then writes them to XML markup in CVAT 1.1 format.
 
@@ -579,21 +581,13 @@ It can be imported into CVAT as markup in the `CVAT for images 1.1` format.
 
 The script works as follows:
 
-1. Takes all images from the folder `IMAGE_DIR'.
-
-2. Loads the YOLOv8 model.
-
-3. Starts object detection for each image.
-
-4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
-
-5. Cuts off weak detections based on the confidence threshold.
-
-6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
-
-7. Writes all cuboids to an XML file in CVAT 1.1 format.
-
-8. Importing annotation in CVAT.
+> 1. Takes all images from the folder `IMAGE_DIR'.
+> 2. Loads the YOLOv8 model.
+> 3. Starts object detection for each image.
+>4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
+>5. Cuts off weak detections based on the confidence threshold.
+>6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
+>7. Writes all cuboids to an XML file in CVAT 1.1 format.
 
 The idea is simple: YOLO gives you a regular rectangle around the car, and the script adds a second face to it to make a pseudo-3D cuboid.
 
