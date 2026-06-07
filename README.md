@@ -383,11 +383,11 @@ b_tl, b_tr, b_bl, b_br
 
  Правильный кубоид
 
-![right]()
+![right](https://github.com/dumuzeyn/Auto-3D-cuboids-for-CVAT/blob/main/image/right3Dcuboid.png)
 
  Не правильный кубоид
 
-![wrong]()
+![wrong](https://github.com/dumuzeyn/Auto-3D-cuboids-for-CVAT/blob/main/image/wrong3Dcuboid.png)
 
 ## Как кубоид записывается в XML
 
@@ -941,11 +941,11 @@ twisted lines. That is why the order differs from what is visually expected.
 
  The correct cuboid
 
-![right]()
+![right](https://github.com/dumuzeyn/Auto-3D-cuboids-for-CVAT/blob/main/image/right3Dcuboid.png)
 
  Wrong cuboid
 
-![wrong]()
+![wrong](https://github.com/dumuzeyn/Auto-3D-cuboids-for-CVAT/blob/main/image/wrong3Dcuboid.png)
 
 ## How a cuboid is written in XML
 
