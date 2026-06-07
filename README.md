@@ -1116,6 +1116,3 @@ If CVAT does not import XML, you need to check:
 - The XML file has not been renamed or corrupted.
 
 > **The author of the project : Zeynalov U.R.O.**
-```
-
-
