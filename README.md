@@ -581,13 +581,21 @@ It can be imported into CVAT as markup in the `CVAT for images 1.1` format.
 
 The script works as follows:
 
-> 1. Takes all images from the folder `IMAGE_DIR'.
-> 2. Loads the YOLOv8 model.
-> 3. Starts object detection for each image.
->4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
->5. Cuts off weak detections based on the confidence threshold.
->6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
->7. Writes all cuboids to an XML file in CVAT 1.1 format.
+1. Takes all images from the folder `IMAGE_DIR'.
+
+2. Loads the YOLOv8 model.
+
+3. Starts object detection for each image.
+
+4. Leaves only the necessary classes, in my case they were `Car`, `Bus`, `Truck'.
+
+5. Cuts off weak detections based on the confidence threshold.
+
+6. A `3D cuboid` is constructed from each 2D bounding box (`bbox`).
+
+7. Writes all cuboids to an XML file in CVAT 1.1 format.
+
+8. Download annotation in CVAT.
 
 The idea is simple: YOLO gives you a regular rectangle around the car, and the script adds a second face to it to make a pseudo-3D cuboid.
 
